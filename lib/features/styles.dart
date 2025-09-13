@@ -14,4 +14,11 @@ abstract class Styles{
     color: Colors.white,
     
   );
+
+  static const titleSize16 = TextStyle(
+    fontWeight: FontWeight.w600,
+    fontSize: 16,
+    color: Colors.white,
+    
+  );
 }
