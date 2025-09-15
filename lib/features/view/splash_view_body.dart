@@ -31,12 +31,18 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
   }
 
   void navigatorToHome() {
-    Future.delayed(
+     Future.delayed(
       const Duration(seconds: 2),()
       {
-        GoRouter.of(context).push('/homeView');
+       nextScreen();
     });
   }
+
+  void nextScreen() {
+  GoRouter.of(context).push('/homeView');
+
+  }
+
   @override
   void dispose(){
     super.dispose();
