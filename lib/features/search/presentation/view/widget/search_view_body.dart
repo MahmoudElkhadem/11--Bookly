@@ -9,20 +9,18 @@ class SearchViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CustomSearchTextField(),
-          SizedBox(height: 16),
-          Text('Search Result',style: Styles.titleSize16),
-          Expanded(child: SearchResultListView())
-        ],
-      )
-    );
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CustomSearchTextField(),
+            SizedBox(height: 16),
+            Text('Search Result', style: Styles.titleSize16),
+            Expanded(child: SearchResultListView())
+          ],
+        ));
   }
 }
-
 
 class SearchResultListView extends StatelessWidget {
   const SearchResultListView({super.key});
@@ -32,11 +30,10 @@ class SearchResultListView extends StatelessWidget {
     return ListView.builder(
       padding: EdgeInsets.zero,
       itemCount: 10,
-      itemBuilder: (context, index) =>
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8),
-          child: BestSellerItem(),
-        )
-        ,);
+      itemBuilder: (context, index) => Padding(
+        padding: const EdgeInsets.symmetric(vertical: 8),
+        child: BestSellerItem(),
+      ),
+    );
   }
 }

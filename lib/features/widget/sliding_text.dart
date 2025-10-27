@@ -13,12 +13,11 @@ class SlidingText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
-      animation: animationController,
-      builder: (context, _){
-      return SlideTransition(
-        position: slidingAnimation,
-        child: const Center(child: Text('Read free books 📕')));
-      }
-    );
+        animation: animationController,
+        builder: (context, _) {
+          return SlideTransition(
+              position: slidingAnimation,
+              child: const Center(child: Text('Read free books 📕')));
+        });
   }
 }

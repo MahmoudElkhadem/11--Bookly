@@ -9,15 +9,14 @@ class CustomBook extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: SizedBox(
         child: AspectRatio(
-          aspectRatio: 1.2/2,
+          aspectRatio: 1.2 / 2,
           child: Container(
             decoration: BoxDecoration(
-              color: Colors.red,
-              borderRadius: BorderRadius.circular(16),
-              image:const DecorationImage(
-                fit: BoxFit.cover,
-                image: AssetImage('assets/images-٦.jpeg'))
-            ),
+                color: Colors.red,
+                borderRadius: BorderRadius.circular(16),
+                image: const DecorationImage(
+                    fit: BoxFit.cover,
+                    image: AssetImage('assets/images-٦.jpeg'))),
           ),
         ),
       ),

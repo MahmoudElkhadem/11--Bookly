@@ -9,45 +9,42 @@ class SplashViewBody extends StatefulWidget {
   State<SplashViewBody> createState() => _SplashViewBodyState();
 }
 
-class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProviderStateMixin {
+class _SplashViewBodyState extends State<SplashViewBody>
+    with SingleTickerProviderStateMixin {
   late AnimationController animationController;
   late Animation<Offset> slidingAnimation;
 
   @override
   void initState() {
     super.initState();
-    animationController = AnimationController(vsync: this ,
-    duration: const Duration(milliseconds: 900)
-    );
+    animationController = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 900));
 
-    slidingAnimation = Tween<Offset>(
-      begin: const Offset(0, 5),
-      end: Offset.zero).animate(animationController);
+    slidingAnimation =
+        Tween<Offset>(begin: const Offset(0, 5), end: Offset.zero)
+            .animate(animationController);
 
-      animationController.forward();
+    animationController.forward();
 
-      navigatorToHome();
-     
+    navigatorToHome();
   }
 
   void navigatorToHome() {
-     Future.delayed(
-      const Duration(seconds: 2),()
-      {
-       nextScreen();
+    Future.delayed(const Duration(seconds: 2), () {
+      nextScreen();
     });
   }
 
   void nextScreen() {
-  GoRouter.of(context).push('/homeView');
-
+    GoRouter.of(context).push('/homeView');
   }
 
   @override
-  void dispose(){
+  void dispose() {
     super.dispose();
     animationController.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -55,12 +52,13 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Image.asset('assets/Logo.png'),
-        const SizedBox(height: 15,),
+        const SizedBox(
+          height: 15,
+        ),
         SlidingText(
-          animationController: animationController,
-          slidingAnimation: slidingAnimation)
+            animationController: animationController,
+            slidingAnimation: slidingAnimation)
       ],
     );
   }
 }
-

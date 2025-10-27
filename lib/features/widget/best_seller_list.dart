@@ -10,11 +10,10 @@ class BestSellerList extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       padding: EdgeInsets.zero,
       itemCount: 10,
-      itemBuilder: (context, index) =>
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8),
-          child: BestSellerItem(),
-        )
-        ,);
+      itemBuilder: (context, index) => Padding(
+        padding: const EdgeInsets.symmetric(vertical: 8),
+        child: BestSellerItem(),
+      ),
+    );
   }
 }
