@@ -3,26 +3,25 @@ import 'package:bookly/features/home/data/repos/home_repo.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-part 'featured_state.dart';
+part 'newset_state.dart';
 
-class FeaturedCubit extends Cubit<FeaturedState> {
-  FeaturedCubit(this.homeRepo) : super(FeaturedInitial());
+class NewsetCubit extends Cubit<NewsetState> {
+  NewsetCubit(this.homeRepo) : super(NewsetInitial());
 
-  static FeaturedCubit get(context) => BlocProvider.of(context);
+  static NewsetCubit get(context) => BlocProvider.of(context);
 
   final HomeRepo homeRepo;
 
-  Future<void> fetchFeaturedBook() async {
-    emit(FeaturedLoading());
+  Future<void> fetchNewsBook() async {
+    emit(NewsetLoading());
      var result = await homeRepo.fetchFeatureBooks();
 
     result.fold((failure) {
-      emit(FeaturedFailure(failure.errmessage));
+      emit(NewsetFailure(failure.errmessage));
     },
     (books) {
-      emit(FeaturedSuccess(books));
+      emit(NewsetSuccess(books));
     }
     );
   }
-  
 }
