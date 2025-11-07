@@ -17,13 +17,15 @@ class BookDetailsView extends StatelessWidget {
           child: Scaffold(
         body: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 5),
+            padding: EdgeInsets.symmetric(horizontal: 5),
             child: Column(
               children: [
                 BookDetailsViewBody(),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: width * .35),
-                  child: CustomBook(),
+                  child: CustomBook(
+                    imageUrl: 'https://images.pexels.com/photos/19975990/pexels-photo-19975990.jpeg?_gl=1*1myammf*_ga*MTk2NjA3MzY1Ny4xNzI1NTU4MzM4*_ga_8JE65Q40S6*czE3NjI1NTE0NTAkbzExJGcxJHQxNzYyNTUxNDU2JGo1NCRsMCRoMA..' ,
+                  ),
                 ),
                 Text(
                   'Ma la napoh beh',

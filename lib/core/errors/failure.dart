@@ -29,7 +29,8 @@ class ServerFailure extends Failure{
       case DioExceptionType.connectionError:
       return ServerFailure.fromResponse(dioError.response!.statusCode!, dioError.response!.data);
       case DioExceptionType.unknown:
-      return ServerFailure.fromResponse(dioError.response!.statusCode!, dioError.response!.data);
+              return ServerFailure('Receive timeout with api server');
+
     }
   }
 

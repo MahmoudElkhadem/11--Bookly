@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class CustomBook extends StatelessWidget {
-  const CustomBook({super.key});
+  const CustomBook({super.key, required this.imageUrl});
 
+  final String imageUrl;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -12,11 +13,13 @@ class CustomBook extends StatelessWidget {
           aspectRatio: 1.2 / 2,
           child: Container(
             decoration: BoxDecoration(
-                color: Colors.red,
+                color: Colors.black,
                 borderRadius: BorderRadius.circular(16),
-                image: const DecorationImage(
+                image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: AssetImage('assets/images-٦.jpeg'))),
+                    image: NetworkImage(
+                      imageUrl
+                    ))),
           ),
         ),
       ),
