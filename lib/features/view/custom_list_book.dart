@@ -21,7 +21,7 @@ class CustomListBook extends StatelessWidget {
             itemBuilder: (context, index) {
               return  CustomBook(
                 imageUrl:
-                state.books[index].volumeInfo.imageLinks.thumbnail ,
+                state.books[index].volumeInfo.imageLinks.thumbnail,
               );
             },
           ),

@@ -14,7 +14,7 @@ class NewsetCubit extends Cubit<NewsetState> {
 
   Future<void> fetchNewsBook() async {
     emit(NewsetLoading());
-     var result = await homeRepo.fetchFeatureBooks();
+     var result = await homeRepo.fetchNewsetBooks();
 
     result.fold((failure) {
       emit(NewsetFailure(failure.errmessage));

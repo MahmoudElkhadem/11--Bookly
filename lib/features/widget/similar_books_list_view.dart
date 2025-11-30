@@ -1,21 +1,37 @@
+import 'package:bookly/cubits/similer/similer_cubit.dart';
 import 'package:bookly/features/home/custom_book.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SimilarBooksListView extends StatelessWidget {
   const SimilarBooksListView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * .15,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) {
-          return const CustomBook(
-            imageUrl: 'https://images.pexels.com/photos/19975990/pexels-photo-19975990.jpeg?_gl=1*1myammf*_ga*MTk2NjA3MzY1Ny4xNzI1NTU4MzM4*_ga_8JE65Q40S6*czE3NjI1NTE0NTAkbzExJGcxJHQxNzYyNTUxNDU2JGo1NCRsMCRoMA..',
-          );
-        },
-      ),
+    return BlocBuilder<SimilerCubit,SimilerState>(
+      builder: (context, state) { 
+        if(state is SimilerSuccess){
+        return SizedBox(
+        height: MediaQuery.of(context).size.height * .15,
+        child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (context, index) {
+            return CustomBook(
+              imageUrl: state.books[index].volumeInfo.imageLinks.thumbnail,
+            );
+          },
+        ),
+      );
+    }
+    else if(state is SimilerFailure){
+      return Text(state.errMessage);
+    }
+    else{
+      return Center(
+        child: CircularProgressIndicator(),
+      );
+    }
+      }
     );
   }
 }

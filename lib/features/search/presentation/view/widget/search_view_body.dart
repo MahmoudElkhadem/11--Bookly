@@ -1,6 +1,5 @@
 import 'package:bookly/features/search/presentation/view/widget/custom_search_text_field.dart';
 import 'package:bookly/features/styles.dart';
-import 'package:bookly/features/view/best_seller_item.dart';
 import 'package:flutter/material.dart';
 
 class SearchViewBody extends StatelessWidget {
@@ -32,7 +31,7 @@ class SearchResultListView extends StatelessWidget {
       itemCount: 10,
       itemBuilder: (context, index) => Padding(
         padding: const EdgeInsets.symmetric(vertical: 8),
-        child: BestSellerItem(),
+        child: Text('data') //BestSellerItem(),
       ),
     );
   }

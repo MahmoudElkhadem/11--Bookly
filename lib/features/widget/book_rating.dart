@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 
 class BookRating extends StatelessWidget {
   const BookRating(
-      {super.key, this.mainAxisAlignment = MainAxisAlignment.start});
+      {super.key, this.mainAxisAlignment = MainAxisAlignment.start, required this.rating});
 
+
+  final int rating;
   final MainAxisAlignment mainAxisAlignment;
   @override
   Widget build(BuildContext context) {
