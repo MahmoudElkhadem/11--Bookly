@@ -12,6 +12,8 @@ void main() {
   setUp();
   runApp(
     const BooklyApp());
+
+      // باقي آخر فيديوهين
 }
 
 class BooklyApp extends StatelessWidget {
@@ -21,6 +23,7 @@ class BooklyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
+       
         BlocProvider(
             create: (context) => FeaturedCubit(getIt.get<HomeRepoImpl>())..fetchFeaturedBook())
             ,

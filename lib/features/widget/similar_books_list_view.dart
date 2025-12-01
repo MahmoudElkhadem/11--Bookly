@@ -15,6 +15,7 @@ class SimilarBooksListView extends StatelessWidget {
         height: MediaQuery.of(context).size.height * .15,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
+          itemCount: state.books.length,
           itemBuilder: (context, index) {
             return CustomBook(
               imageUrl: state.books[index].volumeInfo.imageLinks.thumbnail,

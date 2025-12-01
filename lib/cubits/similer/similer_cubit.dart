@@ -12,17 +12,17 @@ class SimilerCubit extends Cubit<SimilerState> {
 
   final HomeRepo homeRepo;
 
-  Future<void> fetchSimilerBook({required String category}) async {
-    emit(SimilerLoading());
-     var result = await homeRepo.fetchSimilerBooks() ;
+Future<void> fetchSimilerBook({required String category}) async {
+  emit(SimilerLoading());
 
-    result.fold((failure) {
+  var result = await homeRepo.fetchSimilerBooks(category);
+
+  result.fold(
+    (failure) {
       emit(SimilerFailure(failure.errmessage));
     },
     (books) {
       emit(SimilerSuccess(books));
-    }
-    );
-  }
-  
-}
+    },
+  );
+}}

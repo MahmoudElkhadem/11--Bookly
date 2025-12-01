@@ -18,4 +18,10 @@ abstract class Styles {
     fontSize: 16,
     color: Colors.white,
   );
+
+   static const titleOfBook = TextStyle(
+    fontWeight: FontWeight.w600,
+    fontSize: 25,
+    color: Colors.white,
+  );
 }
